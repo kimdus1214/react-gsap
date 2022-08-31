@@ -1,0 +1,20 @@
+header{width: 100%; position: fixed; z-index: 10; background-color: var(--light-khaki);}
+header.open::after{position: absolute; content: ""; width: 100%; height: 200px; background-color: var(--light-khaki); z-index: 9; transition: all .3s;}
+header .header-wrap{display: flex; justify-content: space-between; align-items: center; max-width: 1440px; width: 100%; margin: auto;}
+header h1{width:8.125%}
+header .gnb{display: flex;}
+header .gnb>li{position: relative; z-index: 10;}
+header .gnb li a{color: var(--black)}
+header .gnb li .depth-first{height: 100px; padding: 0 44px;}
+header .gnb li .depth-first a{display: flex; align-items: center; height: 100%; position: relative; font-weight: 500; font-size: 18px;}
+header .gnb li .depth-first a::after{content: ""; display: block; position: absolute; bottom: 0; width: 0; left: 50%; transform: translateX(-50%); height: 2px; transform-origin: top right; background-color: var(--orangey-red); transition: all 300ms ease-in-out;}
+header .gnb li .depth-second{width: 100%; position: absolute; padding: 40px 0 40px 44px; opacity: 0; visibility: hidden;}
+header .gnb li .depth-second li:hover a{color: var(--orangey-red);}
+header .gnb li:hover .depth-first a::after{left: 0; width: 100%; transform: initial}
+header .gnb li:hover .depth-second{opacity: 1; visibility: visible; transition: all 300ms ease-in-out;}
+
+.visible {/* display: flex; */
+    top: 0; transition: top 0.4s ease-out;}
+  
+.hidden {/* display: none; */
+top: -200px; transition: top 0.4s ease-out;}
